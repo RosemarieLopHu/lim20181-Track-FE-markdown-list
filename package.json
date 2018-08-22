@@ -12,6 +12,9 @@
   },
   "author": "",
   "license": "ISC",
+  "bin": {
+    "hola": "./pruebis.js"
+  },
   "bugs": {
     "url": "https://github.com/RosemarieLopHu/lim20181-Track-FE-markdown-list/issues"
   },
