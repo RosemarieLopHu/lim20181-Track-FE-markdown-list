@@ -1,28 +1,34 @@
 #!/usr/bin/env node
-const [,, ... args] = process .args
-/* const fs = require('fs');
-const marked = require('marked');
-let request = require('request'); 
+/* const mdLinks = require('./index.js'); */
+const [, , ...args]= process.argv;
+console.log(args[0]);
 
-const mdLinks = (path, options) => {
-  if (options.validate === true && options.stats == true) {
-    console.log('imprima links')
-  } else if (options.stats == true) {
-    console.log('imprima las opciones')
-  } else if (options.validate == true) {
-    console.log('imprima links validados')
-  } else {
-    console.log()
-  }
-  readFile(path)
+const ruta = args[0];
+const options = {
+  validate: false,
+  stats: false,
+} 
+if (!ruta) {
+  console.log('ingrese la ruta')
+}else{
+  mdLinks (ruta, options)
+  .then(response =>{
+    if (options.validate == false && options.stats == false){
+      console.log(`total: ${response.total} \nunique: ${response.unique} \nbroken: ${response.broken}`);
+    }else if (options.stats){
+      console.log(`total: ${response.total} \nunique: ${response.unique}`);
+    }else if (options.validate){
+      response.forEach(element => {
+        console.log(`${element.file}\n ${element.href}\n ${element.status}\n ${element.text}`)
+      });
+    }else if (Array.isArray (response)){
+      response.forEach(element =>{
+        console.log(`${element.file}\n ${element.href}\n ${element.text}`);
+      });
+    }else {
+      console.log(response);
+    } 
+  })
 }
 
-const readFile = (path, promise) =>{
-  let result = [];
- /*  fs.readFile() */
- /*fs.readFile('.../.md', (err, data) => {
-  if (err) throw err;
-  console.log(data);
-});
 
-} */
