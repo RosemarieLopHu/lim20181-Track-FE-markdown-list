@@ -19,7 +19,12 @@ const recorrer = (ruta) => {
 }
 
 const fsReadDir = (path) => new Promise((resolve, reject) => {
+
+
+
+
   fs.readdir(path, (err, files) => {
+    
 
     err ? reject(err) : resolve(files)
   });
@@ -30,46 +35,30 @@ const fsReadDir = (path) => new Promise((resolve, reject) => {
 
 fs.readFile('README.md', 'utf-8', (err, data) => {
   let arrLinks = [];
+
   if (err) throw err;
   if (data) {
     const expression = /\[(.*?)\]\((.*?)\)/g;
     const reExp = new RegExp(expression);
-
     //console.log(data);
+    let a = []
     data.split('\n')
       .map(line => reExp.exec(line))
       .filter(matches => !!matches)
       .forEach((matches, idx) => {
         // console.log(idx, line)
         // const data2 = reExp.exec(line)
-        console.log(matches[1], matches[2])
+        a.push({
+          file: 'Aquí irá la ruta',
+          text: matches[1],
+          href: matches[2]})
+        console.log(a);
       })
-
-    //console.log(data2);
-    // arrLinks = data2.filter((link) => {
-    //   // console.log(link);
-
-    //   if (link !== '#' && link !== '*') {
-    //     const end = link.indexOf(']');
-
-
-
-    //     // return link;
-    //     //console.log(link);
-    //   //link.indexOf();
-    //     /* const obj = {
-    //       url: element.slice(final + 2, link.length - 1),
-    //       text: element.slice(1, final),
-    //       file: path.resolve(file),
-    //     }; */
-    //   //arrayLinks.push(obj);
-    //   // console.log(link);
-
-    // }
-    // })
   }
 });
 
+
+5
 //el metodo substring permite sacar e contenido de el [] y ()
 //con el leng -1 me sale el indice y el subindice
 //indexof(desde el ()hasta la url)
@@ -91,8 +80,8 @@ const readFileMd = (arrfile) => {
   } catch (err) {
     reject(err)
   }
-
 }
+
 
 
 
