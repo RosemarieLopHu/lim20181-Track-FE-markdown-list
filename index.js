@@ -1,37 +1,10 @@
 // const {promisify} = require('es6-promisify');
 const fs = require('fs');
-const path = require('path');
-/* const fech = require('node-fetch'); */
-const linkCheck = require('link-check');
+const Path = require('path');
+const fetch = require('node-fetch'); 
+//const linkCheck = require('link-check');
 // const stat = promisify(fs.stat);
 
-const recorrer = (ruta) => {
-  if (!fs.statSync(ruta).isDirectory()) {
-    const content = fs.readFileSync(ruta)
-    // LISTO!
-    console.log(ruta)
-  } else { // entonces es directorio
-    const rutasDir = fs.readdirSync(ruta)
-    rutasDir.forEach(rutaDir => {
-      recorrer(path.join(ruta, rutaDir))
-    })
-  }
-}
-
-const fsReadDir = (path) => new Promise((resolve, reject) => {
-
-
-
-
-  fs.readdir(path, (err, files) => {
-    
-
-    err ? reject(err) : resolve(files)
-  });
-});
-
-
-//recorrer('./node_modules')
 
 fs.readFile('README.md', 'utf-8', (err, data) => {
   let arrLinks = [];
@@ -83,15 +56,38 @@ const readFileMd = (arrfile) => {
 }
 
 
-
-
-
-
 const readFile = path => new Promise((resolve, reject) => {
   fs.readFile(path, (err, data) => {
     err ? reject(err) : resolve(data)
   });
 });
+const recorrer = (ruta) => {
+  if (!fs.statSync(ruta).isDirectory()) {
+    const content = fs.readFileSync(ruta)
+    // LISTO!
+    console.log(ruta)
+  } else { // entonces es directorio
+    const rutasDir = fs.readdirSync(ruta)
+    rutasDir.forEach(rutaDir => {
+      recorrer(path.join(ruta, rutaDir))
+    })
+  }
+}
+
+const fsReadDir = (path) => new Promise((resolve, reject) => {
+
+
+
+
+  fs.readdir(path, (err, files) => {
+    
+
+    err ? reject(err) : resolve(files)
+  });
+});
+
+
+//recorrer('./node_modules')
 
 /* 
 const extractLink = contenido => Promise.resolve([]);

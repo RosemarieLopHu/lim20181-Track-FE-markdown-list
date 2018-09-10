@@ -1,34 +1,27 @@
 #!/usr/bin/env node
-const mdLinks = require('./index.js');
+mdLinks = require ('./index.js')
+
 const [, , ...args]= process.argv;
-console.log(args[0]);
 
-const ruta = args[0];
-const options = {
-  validate: false,
-  stats: false,
-} 
-if (!ruta) {
-  console.log('ingrese la ruta')
+let options = {};
+if (args[1]==="--validate"){
+  options = {validate: true}
+
+  mdLinks.mdLinks(args[0], options).then((links)=>{
+    links.forEach(link => {
+      console.log(link.file + "." + link.line + " "+ link.href + " "+link.ok + " " + link.status + " " + link.text)
+    });
+  }).catch((error)=>{
+    console.error("Error > " + error);
+  });
 }else{
-  mdLinks (ruta, options)
-  .then(response =>{
-    if (options.validate == false && options.stats == false){
-      console.log(`total: ${response.total} \nunique: ${response.unique} \nbroken: ${response.broken}`);
-    }else if (options.stats){
-      console.log(`total: ${response.total} \nunique: ${response.unique}`);
-    }else if (options.validate){
-      response.forEach(element => {
-        console.log(`${element.file}\n ${element.href}\n ${element.status}\n ${element.text}`)
-      });
-    }else if (Array.isArray (response)){
-      response.forEach(element =>{
-        console.log(`${element.file}\n ${element.href}\n ${element.text}`);
-      });
-    }else {
-      console.log(response);
-    } 
-  })
+  options = {validate: false}
+  mdLinks.mdLinks(args[0], options).then((links)=>{
+    links.forEach((link)=>{
+      console.log(link.file + ":"+ link.line+ " " + link.href + " " + link.text);
+    })
+  }).catch((error)=>{
+    console.error("Error > " + error);
+  });
 }
-
-
+  
