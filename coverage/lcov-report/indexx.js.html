@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for indexx.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> indexx.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">91.3% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>63/69</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.44% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>17/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.91% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>60/66</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const fs = require('fs');
+const fetch = require('node-fetch');
+const path = require('path');
+const marked = require('marked');
+const union = require('arr-union')
+&nbsp;
+const arrObjetLinks = (recorrDirOfile) =&gt; {
+  let arrObj = [];
+  const renderer = new marked.Renderer();
+  recorrDirOfile.forEach(file =&gt; {
+    const filesLeidos = fs.readFileSync(file, 'utf-8')
+    renderer.link = (href, title, text) =&gt; {
+      arrObj.push({
+        href: href,
+        text: text,
+        file: file,
+      });
+    };
+    marked(filesLeidos, { renderer: renderer });
+  })
+  return arrObj
+}
+&nbsp;
+//f(x) que valida estado de los links --validate
+const validateExtractLinks = (cjtoArr) =&gt; {
+  const arrLink = cjtoArr.map((cjtoObjects =&gt; cjtoObjects.href))
+  const cjtoArrPromise = arrLink.map(objLinks =&gt; fetch(objLinks))//fcth me permite obtener el status
+  return Promise.all(cjtoArrPromise)// retorno de todas las promesas de la f(x) cuando el cjtoarrpromis han concluido con exito
+    .then((res) =&gt; {
+      cjtoArr.map((objectLink, stat) =&gt; {
+        objectLink.status = res[stat].status;
+        objectLink.statusTxt = res[stat].statusText;
+      })
+      return cjtoArr;
+    })
+}
+//f(x) stats que permita determinar la stats basica de cada link
+const flat = (arrObjet) =&gt; {
+  const arrLink = arrObjet.map((cjtoObjects =&gt; cjtoObjects.href))
+  const arrCompare = [];
+  //artificio para utilizar arr-union (compara 2 ó + arr)
+  const newArr = union(arrCompare, arrLink)
+  const objeto = {
+    total: arrLink.length,
+    unique: newArr.length,
+  }
+  return objeto
+}
+//funcion contador links buenos
+const validateStats = (arrValidate, responseStat) =&gt; {
+&nbsp;
+  return arrValidate.then(response =&gt; {
+    let broken = 0;
+    response.forEach(objeto =&gt; {
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (objeto.status === 404) {
+<span class="cstat-no" title="statement not covered" >        broken += 1</span>
+      }
+    })
+    return broken;
+  }).then((res) =&gt; {
+    responseStat.broken = res;
+    return responseStat;
+  })
+}
+&nbsp;
+//f(x) capta la ruta y distingue si es dir o file y retorna un array de files md
+const recorrerRuta = (route) =&gt; {
+  const relativePath = path.resolve(route)
+  let arrFile = []; //array de archivos md
+  const id = fs.statSync(relativePath)
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (id.isFile()) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (path.extname(relativePath) === '.md') {
+      arrFile.push(relativePath)
+    }
+  } else <span class="cstat-no" title="statement not covered" >if (id.isDirectory()) {</span>
+    const readDir = <span class="cstat-no" title="statement not covered" >fs.readdirSync(relativePath) </span>//ARRAY DE ARCHIVO O FILE
+    //X CADA ELEMENT DE READDIR(ARRAY) VOY A VOLVER A LLAMAR A Fx(REECORR RUTA)
+<span class="cstat-no" title="statement not covered" >    readDir.forEach(<span class="fstat-no" title="function not covered" >fi</span>le =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      arrFile = arrFile.concat((recorrerRuta(path.join(relativePath, file))))</span>
+    })
+  }
+  return arrFile;
+}
+&nbsp;
+// Toma como parametro el archivo md
+const mdlinks = (options) =&gt; {
+  // FilePath es la ruta
+  return new Promise((resolve, reject) =&gt; {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!options.path) {
+<span class="cstat-no" title="statement not covered" >      reject('falta argumentos, ejm: md-links &lt;path&gt; [options]')</span>
+    } else {
+      const recorrDirOfile = recorrerRuta(options.path);
+      const arrObjet = arrObjetLinks(recorrDirOfile)
+      let result = arrObjet
+      let arrValidate
+      let responseStat
+&nbsp;
+      if (options.validate) {
+        arrValidate = validateExtractLinks(arrObjet)
+        result = arrValidate
+      }
+      if (options.stats) {
+        responseStat = flat(arrObjet)
+        result = responseStat
+      }
+      if (options.stats &amp;&amp; options.validate) {
+        result = validateStats(arrValidate, responseStat)
+      }
+      resolve(result)
+    }
+  });
+};
+module.exports = mdlinks</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Sep 14 2018 00:47:43 GMT-0500 (GMT-05:00)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>
