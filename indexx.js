@@ -2,7 +2,8 @@ const fs = require('fs');
 const fetch = require('node-fetch');
 const path = require('path');
 const marked = require('marked');
-const union = require('arr-union')
+//using strict equality for comparisons:
+const union = require('arr-union')//Combines a list of arrays, returning a single array with unique values
 
 const arrObjetLinks = (recorrDirOfile) => {
   let arrObj = [];
@@ -56,6 +57,8 @@ const validateStats = (arrValidate, responseStat) => {
         broken += 1
       }
     })
+    console.log(broken);
+    
     return broken;
   }).then((res) => {
     responseStat.broken = res;
@@ -72,7 +75,7 @@ const recorrerRuta = (route) => {
     if (path.extname(relativePath) === '.md') {
       arrFile.push(relativePath)
     }
-  } else if (id.isDirectory()) {
+  } else {
     const readDir = fs.readdirSync(relativePath) //ARRAY DE ARCHIVO O FILE
     //X CADA ELEMENT DE READDIR(ARRAY) VOY A VOLVER A LLAMAR A Fx(REECORR RUTA)
     readDir.forEach(file => {
@@ -97,6 +100,7 @@ const mdlinks = (options) => {
 
       if (options.validate) {
         arrValidate = validateExtractLinks(arrObjet)
+
         result = arrValidate
       }
       if (options.stats) {
