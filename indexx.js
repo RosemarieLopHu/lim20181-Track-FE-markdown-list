@@ -57,8 +57,7 @@ const validateStats = (arrValidate, responseStat) => {
         broken += 1
       }
     })
-    console.log(broken);
-    
+    //console.log(broken);
     return broken;
   }).then((res) => {
     responseStat.broken = res;
